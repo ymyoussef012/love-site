@@ -1,0 +1,365 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "SF Arabic",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  background:
+    radial-gradient(circle at top, #ffd6e7 0%, #ffc0d8 35%, #f8a8c5 100%);
+  color: #5b1835;
+  overflow-x: hidden;
+  padding-bottom: 110px;
+}
+
+/* القلوب المتحركة */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -60px;
+  font-size: 25px;
+  opacity: 0.65;
+  animation: floatHeart 9s linear infinite;
+}
+
+.hearts span:nth-child(1) {
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+  left: 25%;
+  animation-delay: 2s;
+  font-size: 20px;
+}
+
+.hearts span:nth-child(3) {
+  left: 43%;
+  animation-delay: 4s;
+  font-size: 30px;
+}
+
+.hearts span:nth-child(4) {
+  left: 62%;
+  animation-delay: 1s;
+  font-size: 22px;
+}
+
+.hearts span:nth-child(5) {
+  left: 78%;
+  animation-delay: 5s;
+  font-size: 28px;
+}
+
+.hearts span:nth-child(6) {
+  left: 92%;
+  animation-delay: 3s;
+  font-size: 19px;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* الصفحات */
+.page {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.page.active {
+  display: flex;
+  animation: pageIn 0.7s ease;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* الكروت */
+.card,
+.counter-card {
+  width: min(100%, 420px);
+  padding: 38px 25px;
+  text-align: center;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 20px 60px rgba(117, 26, 70, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.big-heart {
+  font-size: 75px;
+  margin-bottom: 15px;
+  animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 18px;
+  color: #8f174b;
+}
+
+.card p {
+  font-size: 18px;
+  line-height: 2;
+  margin-bottom: 28px;
+  color: #68233f;
+}
+
+/* الأزرار */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.card button {
+  padding: 14px 28px;
+  border-radius: 50px;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff4f91, #d92c70);
+  box-shadow: 0 10px 25px rgba(217, 44, 112, 0.3);
+  transition: 0.25s ease;
+}
+
+.card button:active {
+  transform: scale(0.94);
+}
+
+/* العداد */
+#counterSection {
+  position: relative;
+  z-index: 1;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.counter-card h2 {
+  font-size: 28px;
+  color: #8f174b;
+  margin-bottom: 25px;
+}
+
+.counter {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.counter div {
+  padding: 17px 8px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.counter strong {
+  display: block;
+  font-size: 28px;
+  color: #c51f62;
+}
+
+.counter span {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #71304b;
+}
+
+/* الذكريات */
+.memories {
+  position: relative;
+  z-index: 1;
+  padding: 35px 20px 150px;
+  text-align: center;
+}
+
+.memories h2 {
+  font-size: 29px;
+  color: #8f174b;
+  margin-bottom: 22px;
+}
+
+.memory-grid {
+  width: min(100%, 420px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+}
+
+.memory {
+  min-height: 125px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+  padding: 15px;
+  border-radius: 23px;
+  font-size: 17px;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(117, 26, 70, 0.12);
+}
+
+/* مشغل الأغاني */
+.music-player {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  padding: 12px 15px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  box-shadow: 0 12px 35px rgba(92, 16, 52, 0.2);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.song-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+#songTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: #6f1b40;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#songCounter {
+  font-size: 11px;
+  color: #a24b70;
+}
+
+.music-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  direction: ltr;
+}
+
+.music-buttons button {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  background: rgba(255, 105, 155, 0.18);
+  font-size: 16px;
+  transition: 0.2s ease;
+}
+
+.music-buttons button:active {
+  transform: scale(0.88);
+}
+
+#playButton {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #ff4f91, #d92c70);
+  color: white;
+}
+
+/* الموبايل */
+@media (max-width: 380px) {
+  .card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  .big-heart {
+    font-size: 62px;
+  }
+
+  .music-player {
+    left: 8px;
+    right: 8px;
+  }
+                    }
