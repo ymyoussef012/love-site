@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قصتنا ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- القلوب المتحركة -->
+  <div class="hearts">
+    <span>❤️</span>
+    <span>💕</span>
+    <span>💗</span>
+    <span>💖</span>
+    <span>💘</span>
+    <span>💞</span>
+  </div>
+
+  <!-- الصفحة الأولى -->
+  <section class="page active">
+    <div class="card">
+      <div class="big-heart">❤️</div>
+      <h1>قصتنا بدأت هنا</h1>
+      <p>
+        من أول لحظة دخلتي فيها حياتي،  
+        وكل حاجة بقت أجمل بوجودك.
+      </p>
+      <button onclick="nextPage()">كملي معايا 💕</button>
+    </div>
+  </section>
+
+  <!-- الصفحة الثانية -->
+  <section class="page">
+    <div class="card">
+      <div class="big-heart">💗</div>
+      <h1>إنتِ أجمل حاجة</h1>
+      <p>
+        وجودك جنبي بيخلّي كل يوم مختلف،
+        وكل لحظة معاكي ليها مكان خاص في قلبي.
+      </p>
+      <button onclick="nextPage()">كملي ❤️</button>
+    </div>
+  </section>
+
+  <!-- الصفحة الثالثة -->
+  <section class="page">
+    <div class="card">
+      <div class="big-heart">💖</div>
+      <h1>كل يوم معاكي</h1>
+      <p>
+        مش محتاج حاجة كبيرة عشان أكون مبسوط،
+        كفاية إنك تكوني معايا.
+      </p>
+      <button onclick="nextPage()">آخر حاجة 🥹</button>
+    </div>
+  </section>
+
+  <!-- الصفحة الرابعة -->
+  <section class="page">
+    <div class="card">
+      <div class="big-heart">💞</div>
+      <h1>وهنكمل سوا</h1>
+      <p>
+        دي مش نهاية قصتنا...
+        دي مجرد بداية لحاجات كتير لسه هنعيشها سوا ❤️
+      </p>
+      <button onclick="showCounter()">شوفي عدّى قد إيه ❤️</button>
+    </div>
+  </section>
+
+  <!-- العداد -->
+  <section id="counterSection">
+    <div class="counter-card">
+      <h2>بقالنا سوا ❤️</h2>
+
+      <div class="counter">
+        <div>
+          <strong id="days">0</strong>
+          <span>يوم</span>
+        </div>
+
+        <div>
+          <strong id="hours">0</strong>
+          <span>ساعة</span>
+        </div>
+
+        <div>
+          <strong id="minutes">0</strong>
+          <span>دقيقة</span>
+        </div>
+
+        <div>
+          <strong id="seconds">0</strong>
+          <span>ثانية</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- الذكريات -->
+  <section class="memories">
+    <h2>ذكرياتنا 💕</h2>
+
+    <div class="memory-grid">
+      <div class="memory">❤️<br>أجمل بداية</div>
+      <div class="memory">💕<br>أحلى لحظات</div>
+      <div class="memory">💗<br>ضحكتنا سوا</div>
+      <div class="memory">💖<br>ولسه في كتير</div>
+    </div>
+  </section>
+
+  <!-- مشغل الأغاني -->
+  <div class="music-player">
+    <div class="song-info">
+      <span id="songTitle">أغنيتنا الأولى ❤️</span>
+      <small id="songCounter">1 / 6</small>
+    </div>
+
+    <div class="music-buttons">
+      <button onclick="previousSong()">⏮️</button>
+      <button id="playButton" onclick="toggleMusic()">▶️</button>
+      <button onclick="nextSong()">⏭️</button>
+    </div>
+
+    <audio id="audio" preload="metadata"></audio>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+                                           </html>
