@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "SF Arabic",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  background:
+    radial-gradient(circle at top, #ffd6e7 0%, #ffc0d8 35%, #f8a8c5 100%);
+  color: #5b1835;
+  overflow-x: hidden;
+  padding-bottom: 110px;
+}
+
+/* القلوب المتحركة */
+.hearts {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: -60px;
+  font-size: 25px;
+  opacity: 0.65;
+  animation: floatHeart 9s linear infinite;
+}
+
+.hearts span:nth-child(1) {
+  left: 8%;
+  animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+  left: 25%;
+  animation-delay: 2s;
+  font-size: 20px;
+}
+
+.hearts span:nth-child(3) {
+  left: 43%;
+  animation-delay: 4s;
+  font-size: 30px;
+}
+
+.hearts span:nth-child(4) {
+  left: 62%;
+  animation-delay: 1s;
+  font-size: 22px;
+}
+
+.hearts span:nth-child(5) {
+  left: 78%;
+  animation-delay: 5s;
+  font-size: 28px;
+}
+
+.hearts span:nth-child(6) {
+  left: 92%;
+  animation-delay: 3s;
+  font-size: 19px;
+}
+
+@keyframes floatHeart {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* الصفحات */
+.page {
+  min-height: 100vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  position: relative;
+  z-index: 1;
+}
+
+.page.active {
+  display: flex;
+  animation: pageIn 0.7s ease;
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* الكروت */
+.card,
+.counter-card {
+  width: min(100%, 420px);
+  padding: 38px 25px;
+  text-align: center;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 20px 60px rgba(117, 26, 70, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.big-heart {
+  font-size: 75px;
+  margin-bottom: 15px;
+  animation: heartbeat 1.8s infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 18px;
+  color: #8f174b;
+}
+
+.card p {
+  font-size: 18px;
+  line-height: 2;
+  margin-bottom: 28px;
+  color: #68233f;
+}
+
+/* الأزرار */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.card button {
+  padding: 14px 28px;
+  border-radius: 50px;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff4f91, #d92c70);
+  box-shadow: 0 10px 25px rgba(217, 44, 112, 0.3);
+  transition
